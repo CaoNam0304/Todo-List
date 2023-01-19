@@ -2,9 +2,21 @@
   margin: 0 auto;
   justify-content: center;
   margin-top: 20vh;
-  width: 500px;
+  width: 40%;
   padding: 40px 20px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.375);
   box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .todo-list {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .todo-list {
+    width: 90%;
+  }
 }

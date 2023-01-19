@@ -12,6 +12,9 @@
   top: 16%;
   cursor: pointer;
   color: aliceblue;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .search-todo {
@@ -63,5 +66,24 @@
     color: black;
     border: 1px solid gray;
     opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 562px) {
+  .clear-all {
+    display: none;
+  }
+  .category {
+    p {
+      &:hover {
+        color: #ca8cfa;
+      }
+      padding: 0px;
+    }
+    .category-name {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
