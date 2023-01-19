@@ -26,6 +26,7 @@ function TodoList() {
   const [curentTodo, setCurentTodo] = useState<Todo | null>(null)
   const [todos, setTodos] = useState<Todo[]>([])
   const [messError, setMessError] = useState<string>('')
+  const [activeCategory, setActiveCategory] = useState<string>('')
 
   useEffect(() => {
     const toStringTodos = localStorage.getItem('todos')
@@ -141,12 +142,15 @@ function TodoList() {
   const handleFillter = (element: string) => {
     if (element === '') {
       setFilterTodo(undefined)
+      setActiveCategory('All')
     }
     if (element === 'Pending') {
       setFilterTodo(false)
+      setActiveCategory('Pending')
     }
     if (element === 'Completed') {
       setFilterTodo(true)
+      setActiveCategory('Completed')
     }
   }
 
@@ -166,6 +170,7 @@ function TodoList() {
         handleFillter={handleFillter}
         handleValueInput={handleValueInput}
         deleteAll={deleteAll}
+        activeCategory={activeCategory}
       />
       <TaskListTodo
         todos={listFilterTodo}

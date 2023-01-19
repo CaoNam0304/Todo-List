@@ -7,10 +7,11 @@ interface HeaderTodo {
   handleFillter: (element: string) => void
   handleValueInput: (event: React.ChangeEvent<HTMLInputElement>) => void
   deleteAll: () => void
+  activeCategory: string
 }
 
 function HeaderTodo(props: HeaderTodo) {
-  const { handleOpenModal, handleFillter, handleValueInput, deleteAll } = props
+  const { handleOpenModal, handleFillter, handleValueInput, deleteAll, activeCategory } = props
 
   const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -25,9 +26,21 @@ function HeaderTodo(props: HeaderTodo) {
       </form>
       <div className='category'>
         <div className='category-name'>
-          <p onClick={() => handleFillter('')}>All</p>
-          <p onClick={() => handleFillter('Pending')}>Pending</p>
-          <p onClick={() => handleFillter('Completed')}>Completed</p>
+          <p className={`${activeCategory === 'All' ? 'item-active' : ''}`} onClick={() => handleFillter('')}>
+            All
+          </p>
+          <p
+            className={`${activeCategory === 'Pending' ? 'item-active' : ''}`}
+            onClick={() => handleFillter('Pending')}
+          >
+            Pending
+          </p>
+          <p
+            className={`${activeCategory === 'Completed' ? 'item-active' : ''}`}
+            onClick={() => handleFillter('Completed')}
+          >
+            Completed
+          </p>
         </div>
         <div onClick={deleteAll} className='clear-all'>
           Clear All
