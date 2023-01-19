@@ -1,6 +1,6 @@
 .modal {
   &-overlay {
-    background-color: rgb(0, 0, 0, 0.23);
+    background-color: rgb(0, 0, 0, 0.45);
     position: fixed;
     top: 0;
     left: 0;
@@ -56,5 +56,24 @@
         color: black;
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 360px;
+    padding: 20px 20px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 562px) {
+  .modal-container {
+    width: 360px;
   }
 }
