@@ -26,7 +26,7 @@ function TodoList() {
   const [curentTodo, setCurentTodo] = useState<Todo | null>(null)
   const [todos, setTodos] = useState<Todo[]>([])
   const [messError, setMessError] = useState<string>('')
-  const [activeCategory, setActiveCategory] = useState<string>('')
+  const [activeCategory, setActiveCategory] = useState<string>('All')
 
   useEffect(() => {
     const toStringTodos = localStorage.getItem('todos')
