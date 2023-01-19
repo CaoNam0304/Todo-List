@@ -36,7 +36,7 @@ function TodoList() {
   // #ADD TODO
   const addTodo = (name: string) => {
     if (!name) {
-      ToastError(toast, `Không được để trống :((`)
+      ToastError(toast, `Can't be left blank :((`)
       setMessError('error')
       return
     }
